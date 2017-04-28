@@ -19,3 +19,6 @@ String sql = "  Select t.Id, "+
 				"  Where 1=1 "+
 				"  and t.Settle_Module!=11 "+
 				"  and t.User_Id =?";
+
+
+zhe  duan  sql   bu  zhi dao   shi  na er  chu  le  wen  ti ?
