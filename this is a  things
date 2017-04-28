@@ -1,0 +1,21 @@
+String sql = "  Select t.Id, "+
+				"  t.Settle_Module, "+
+				"  t.Settle_Type, "+
+				"  t.Create_Datetime, "+
+				"  to_char(t.Create_Datetime,'yyyy-mm-dd HH24:MI:SS') create_datetime_char,"+
+				"  ltrim(to_char(nvl(t.Settle_Sum,0),'9,999,999,990.99')) Settle_Sum_char,"+
+				"  t.settle_id, "+
+				"  t.Accout_Type, "+
+				  
+				 
+				"  t.Prod_Staging_Item_Id, "+
+				"  t.state, " +
+				"  p.Project_Name,  "+
+				"  en.check_status, "+
+			    "  en.enchashment_status "+
+				"  From t_Fina_Account_Detail t "+
+				"  Left Join t_Prod_Staging_Item p On p.Id = t.Prod_Staging_Item_Id "+
+				"  Left Join t_Fina_User_Enchashment en On t.Id=en.Id "+
+				"  Where 1=1 "+
+				"  and t.Settle_Module!=11 "+
+				"  and t.User_Id =?";
